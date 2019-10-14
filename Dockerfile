@@ -6,4 +6,5 @@ COPY --from=static-docker-source /usr/local/bin/docker /usr/local/bin/docker
 # Adds docker-compose to the image
 RUN apk add --no-cache py-pip python-dev libffi-dev openssl-dev gcc libc-dev make \
     && pip install --upgrade pip \
-    && pip install cffi docker-compose
+    && pip install cffi docker-compose \
+    && apk add --no-cache ca-certificates
